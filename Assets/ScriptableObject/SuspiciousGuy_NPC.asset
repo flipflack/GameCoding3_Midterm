@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SuspiciousGuy_NPC
   m_EditorClassIdentifier: Assembly-CSharp::NPC_Data
   npcName: Suspicious Guy
-  startingNode: Suspicious Guy_Dialogue
+  startingNode: SuspiciousGuy_Dialogue
   currentPhase: 0
