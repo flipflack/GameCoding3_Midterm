@@ -59,8 +59,7 @@ You: And if I refuse?
 Ayanokoji: Then I'd have to reconsider how useful you are. After all, people are remarkably easy to influence when they believe they're acting of their own free will.
 You: You really are something else.
 Ayanokoji: Your opinion changes nothing. I have no particular interest in how you're going to accomplish it. Just don't make me regret asking.
-<<set $ayanokoji_DialoguePhase = "QuestTaken">>
-
+<<dialoguePhaseGetter Ayanokoji "QuestTaken">>
 ===
 
 title: Ayanokoji_QuestTaken

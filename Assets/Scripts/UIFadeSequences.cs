@@ -5,6 +5,8 @@ using TMPro;
 
 public class UIFadeSequences : MonoBehaviour
 {   
+    public static GameController instance {  get; private set; }
+    
     [Header("Scene Fade In References")]
     public Image fadeOverlay;
     public float fadeDuration;
@@ -17,16 +19,28 @@ public class UIFadeSequences : MonoBehaviour
     public float holdDuration;
     public float fadeOutDuration;
 
-    void Start()
-    {
-        if (fadeOverlay != null)
-        {   
-            StartCoroutine(FadeIn());
+    [Header("Checks")]
+    public bool ranFadeSequence = false;
+    public bool ranTitleSequence = false;
+
+    void Awake()
+    {   
+        if (!ranFadeSequence)
+        {
+            if (fadeOverlay != null)
+            {   
+                StartCoroutine(FadeIn());
+                ranFadeSequence = true;
+            }
         }
 
-        if (titleText != null)
+        if (!ranTitleSequence)
         {
-            StartCoroutine(DoTitleSequence());
+            if (titleText != null)
+            {
+                StartCoroutine(DoTitleSequence());
+                ranTitleSequence = true;
+            }
         }
     }
 

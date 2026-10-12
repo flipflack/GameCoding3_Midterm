@@ -56,7 +56,6 @@ public class NPCInteract : MonoBehaviour
     {
         InMemoryVariableStorage vData = GameObject.FindAnyObjectByType<InMemoryVariableStorage>();
         vData.SetValue("$ayanokoji_DialoguePhase", npc_Data.currentPhase.ToString());
-
         vData.SetValue("$suspiciousGuy_DialoguePhase", npc_Data.currentPhase.ToString());
     }
 
