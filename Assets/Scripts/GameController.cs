@@ -1,18 +1,20 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 
 public class GameController : MonoBehaviour
 {
-
     // add check for first scene loaded
-
     public static GameController instance {  get; private set; }
 
+    [Header("Spawn References")]
     public Transform startingLoc;
     public Vector3 loadLoc;
     public Quaternion loadRot;
     public GameObject firstPersonRig;
 
+    [Header("Scene Load Check")]
     public bool firstSceneLoaded = false;
 
     public void Awake()
