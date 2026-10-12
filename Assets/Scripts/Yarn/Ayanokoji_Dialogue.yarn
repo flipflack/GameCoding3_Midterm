@@ -1,4 +1,22 @@
 ﻿title: Ayanokoji_Dialogue
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<declare $dialoguePhase = "">>
+<<dialoguePhaseSetter NPC>>
+
+//Declare Variables Here
+
+<<if $dialoguePhase == "QuestIntroduction">>
+<<jump QuestIntroduction>>
+<<elseif $dialoguePhase == "QuestTaken">>
+<<jump QuestTaken>>
+<<elseif $dialoguePhase == "QuestCompleted">>
+<<jump QuestCompleted>>
+<<elseif $dialoguePhase == "QuestFumbled">>
+<<jump QuestFumbled>>
+<<endif>>
+===
+
+title: QuestIntroduction
+---
+Ayanokoji: Hi.
 ===

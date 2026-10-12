@@ -4,7 +4,7 @@ using UnityEngine;
 public class NPC_Data : ScriptableObject
 {
     public string npcName;
-    public string startNode;
+    public string startingNode;
     public enum dialoguePhase { QuestIntroduction, QuestTaken, QuestCompleted, QuestFumbled }
     public dialoguePhase currentPhase;
 

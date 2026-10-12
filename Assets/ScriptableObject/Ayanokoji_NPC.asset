@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ayanokoji_NPC
   m_EditorClassIdentifier: Assembly-CSharp::NPC_Data
   npcName: Ayanokoji
-  startNode: QuestIntroduction
+  startingNode: Ayanokoji_Dialogue
   currentPhase: 0
