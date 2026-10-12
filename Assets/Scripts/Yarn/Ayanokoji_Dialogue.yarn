@@ -1,22 +1,22 @@
 ﻿title: Ayanokoji_Dialogue
 ---
-<<declare $dialoguePhase = "">>
-<<dialoguePhaseSetter NPC>>
+<<declare $ayanokoji_DialoguePhase = "">>
+<<dialoguePhaseSetter Ayanokoji>>
 
 //Declare Variables Here
 
-<<if $dialoguePhase == "QuestIntroduction">>
-<<jump QuestIntroduction>>
-<<elseif $dialoguePhase == "QuestTaken">>
-<<jump QuestTaken>>
-<<elseif $dialoguePhase == "QuestCompleted">>
-<<jump QuestCompleted>>
-<<elseif $dialoguePhase == "QuestFumbled">>
-<<jump QuestFumbled>>
+<<if $ayanokoji_DialoguePhase == "QuestIntroduction">>
+<<jump Ayanokoji_QuestIntroduction>>
+<<elseif $ayanokoji_DialoguePhase == "QuestTaken">>
+<<jump Ayanokoji_QuestTaken>>
+<<elseif $ayanokoji_DialoguePhase == "QuestCompleted">>
+<<jump Ayanokoji_QuestCompleted>>
+<<elseif $ayanokoji_DialoguePhase == "QuestFumbled">>
+<<jump Ayanokoji_QuestFumbled>>
 <<endif>>
 ===
 
-title: QuestIntroduction
+title: Ayanokoji_QuestIntroduction
 ---
 Ayanokoji: Hi.
 ===

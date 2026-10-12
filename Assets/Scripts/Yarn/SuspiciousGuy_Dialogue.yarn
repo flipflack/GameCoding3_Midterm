@@ -1,4 +1,20 @@
 ﻿title: SuspiciousGuy_Dialogue
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<declare $suspiciousGuy_DialoguePhase = "">>
+<<dialoguePhaseSetter SuspiciousGuy_NPC>>
+
+//Declare Variables Here
+
+<<if $suspiciousGuy_DialoguePhase == "QuestIntroduction">>
+<<jump SuspiciousGuy_QuestIntroduction>>
+<<elseif $suspiciousGuy_DialoguePhase == "QuestCompleted">>
+<<jump SuspiciousGuy_QuestCompleted>>
+<<elseif $suspiciousGuy_DialoguePhase == "QuestFumbled">>
+<<jump SuspiciousGuy_QuestFumbled>>
+<<endif>>
+===
+
+title: SuspiciousGuy_QuestIntroduction
+---
+Suspicious Guy: Hi.
 ===
