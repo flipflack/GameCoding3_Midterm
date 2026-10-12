@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 830058172}
   - component: {fileID: 830058171}
   - component: {fileID: 830058170}
+  - component: {fileID: 830058174}
   m_Layer: 0
   m_Name: Ayanokoji
   m_TagString: Untagged
@@ -359,6 +360,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1269140502}
   m_LocalEulerAnglesHint: {x: 7.047, y: 1.595, z: 11.09}
+--- !u!135 &830058174
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830058169}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 7
+  m_Center: {x: 0, y: 0.0000047683716, z: 0.0000076293945}
 --- !u!1 &1121942646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1403,6 @@ SceneRoots:
   - {fileID: 1609673112}
   - {fileID: 1814943560}
   - {fileID: 1196830672}
-  - {fileID: 1953395204}
   - {fileID: 1894947449}
+  - {fileID: 1953395204}
   - {fileID: 1175980527}
