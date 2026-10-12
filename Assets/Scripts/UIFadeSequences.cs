@@ -4,7 +4,7 @@ using System.Collections;
 using TMPro;
 
 public class UIFadeSequences : MonoBehaviour
-{
+{   
     [Header("Scene Fade In References")]
     public Image fadeOverlay;
     public float fadeDuration;
@@ -20,7 +20,7 @@ public class UIFadeSequences : MonoBehaviour
     void Start()
     {
         if (fadeOverlay != null)
-        {
+        {   
             StartCoroutine(FadeIn());
         }
 
@@ -31,7 +31,7 @@ public class UIFadeSequences : MonoBehaviour
     }
 
     IEnumerator FadeIn()
-    {
+    {   
         yield return new WaitForSeconds(delayDuration);
         
         float elapsedTime = 0f;
