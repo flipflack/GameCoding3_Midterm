@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Player rigidbody
     Rigidbody rb;
+    public Transform playerCamera;
 
     private void Start()
     {   
@@ -60,7 +61,8 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         //Calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = playerCamera.forward * verticalInput + playerCamera.right * horizontalInput;
+        moveDirection.y = 0f;
 
         //Add force to player to actually move player in calculated direction
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
