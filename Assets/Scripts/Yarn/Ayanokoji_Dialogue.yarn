@@ -18,5 +18,73 @@
 
 title: Ayanokoji_QuestIntroduction
 ---
-Ayanokoji: Hi.
+You: Ayanokoji... What happened to you?? Why are you laying in bed?
+Ayanokoji: *In Bed* Oh hey, it's you.
+You: I asked you a question, are you going to answer?
+Ayanokoji: Why I'm in bed, and stuck in bed for the foreseeable future should be of no concern to you.
+    -> ...
+        <<jump Ayanokoji_QuestIntroduction_02>>
+    -> Um, okay. I see...
+        <<jump Ayanokoji_QuestIntroduction_02>>
+===
+
+title: Ayanokoji_QuestIntroduction_02
+---
+Ayanokoji: However, as I am handicapped at the moment, there's something I will require some assistance on.
+You: Oh, so you're saying you need my help. That's rare. So out with it. What is it?
+Ayanokoji: Relax, always getting ahead of yourself. You're here anyways, so it would be a waste for this opportunity to be underutilized.
+You: I think I'm about to develop a major headache-
+Ayanokoji: Aurafarm.
+You: What?
+Ayanokoji: Aurafarm.
+    -> And how should I do that???
+        <<jump Ayanokoji_QuestIntroduction_04>>
+    -> What.....
+        <<jump Ayanokoji_QuestIntroduction_03>>
+===
+
+title: Ayanokoji_QuestIntroduction_03
+---
+You: What.....
+Ayanokoji: You heard what I said.
+You: Are you serious?
+Ayanokoji: Do I look like I'm joking?
+<<jump Ayanokoji_QuestIntroduction_04>>
+===
+
+title: Ayanokoji_QuestIntroduction_04
+---
+Ayanokoji: Don't overthink it. Be composed. Know when to speak and when to remain silent.
+You: And if I refuse?
+Ayanokoji: Then I'd have to reconsider how useful you are. After all, people are remarkably easy to influence when they believe they're acting of their own free will.
+You: You really are something else.
+Ayanokoji: Your opinion changes nothing. I have no particular interest in how you're going to accomplish it. Just don't make me regret asking.
+<<set $ayanokoji_DialoguePhase = "QuestTaken">>
+
+===
+
+title: Ayanokoji_QuestTaken
+---
+Ayanokoji: What are you still doing here? Go out and start aurafarming.
+===
+
+title: Ayanokoji_QuestCompleted
+---
+Ayanokoji: I knew my judgement was without flaw. A flawless victory.
+You: Heh... Of course, that was a no brainer.
+Ayanokoji: That aura... Its right there, your embodiment of it is overpowering yet healing.
+Ayanokoji: *Ayanokoji stands up.*
+Ayanokoji: Thank you.
+*Ayanokoji disappears.*
+===
+
+title: Ayanokoji_QuestFumbled
+---
+Ayanokoji: Ah, you imbecile, I knew I shouldn't have trusted you with this assignment.
+You: A-Ayanokoji, I'm sorry...
+Ayanokoji: Look, if you didn't want to see me perish from this world, out with it, leave me be.
+You: W-What?? You never mentioned how imperative this assignment would be.
+Ayanokoji: I had no need to mention it, I had faith in you, but you failed me. *cough, cough cough*
+Ayanokoji: Goodbye World.
+*Ayanokoji disintegrates into a million particles. What a fail.*
 ===

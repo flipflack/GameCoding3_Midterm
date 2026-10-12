@@ -535,6 +535,7 @@ MonoBehaviour:
   interaction: Press F to Interact
   dialogue: {fileID: 1892243804}
   npc_Data: {fileID: 11400000, guid: 642da8e3c06994c5b8f149a66bb59aba, type: 2}
+  lockCursor: {fileID: 1953395205}
 --- !u!1 &1121942646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1953395204}
   - component: {fileID: 1953395203}
+  - component: {fileID: 1953395205}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1744,6 +1746,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1953395205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953395202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503a3122e24d44946834c7a88b688db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockCursor
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

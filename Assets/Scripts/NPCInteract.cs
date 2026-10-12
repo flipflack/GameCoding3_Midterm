@@ -10,6 +10,7 @@ public class NPCInteract : MonoBehaviour
     private bool canInteract;
     public DialogueRunner dialogue;
     public NPC_Data npc_Data;
+    public LockCursor lockCursor;
 
     //public NPC_Cam_Control camController;
 
@@ -44,6 +45,7 @@ public class NPCInteract : MonoBehaviour
             {
                 setText("");
                 dialogue.StartDialogue(npc_Data.startingNode);
+                lockCursor.CursorUnlock();
                 canInteract = false;
             }
         }
