@@ -111,20 +111,18 @@ title: SuspiciousGuy_CheckResolution
 
 title: SuspiciousGuy_QuestWin
 ---
-<<set $ayanokoji_DialoguePhase = "QuestCompleted">>
-<<dialoguePhaseGetter Ayanokoji "QuestCompleted">>
 Suspicious Guy: Sigh.. Fine you win.. Forget anything that I said earlier
 You: Sure
 Suspicious Guy: Ugh, you’re seriously annoying, you know that? 
 You: That doesn’t concern me. 
 *Looks out into the far distance, devoid of all emotion. Coolness is your first name, calm your second, and unmoving your third.*
+<<set_quest_phase GameController "QuestCompleted">>
 ===
 title: SuspiciousGuy_QuestFumbled
 position: 695,-58
 ---
-<<set $ayanokoji_DialoguePhase = "QuestCompleted">>
-<<dialoguePhaseGetter Ayanokoji "QuestCompleted">>
 Suspicious Guy: You think you’re so tough huh, trying to be the cool kid when in reality you’re actually a fricken loser.
 Suspicious Guy: *spits on player* Don’t talk to me again 
 *Go back and tell Ayanokoji the result of your pursuit in Aurafarming* 
+<<set_quest_phase GameController "QuestFumbled">>
 ===

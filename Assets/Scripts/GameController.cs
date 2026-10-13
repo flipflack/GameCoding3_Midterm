@@ -1,7 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
+using Yarn.Unity;
 
 public class GameController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class GameController : MonoBehaviour
     [Header("Checks")]
     public static bool ranFadeSequence = false;
     public static bool ranTitleSequence = false;
+
+    public NPC_Data ayanokojiData; 
 
     public void Awake()
     {
@@ -60,5 +63,31 @@ public class GameController : MonoBehaviour
     {
         loadLoc = loc;
         loadRot = rot;
+    }
+
+    
+    [YarnCommand("set_quest_phase")]
+    public void SetQuestPhase(string phase)
+    {
+        if (ayanokojiData == null)
+        {
+            Debug.LogError("[GameController] ayanokojiData is NOT assigned in the Inspector!");
+            return;
+        }
+
+        if (phase == "QuestTaken")
+        {
+            ayanokojiData.currentPhase = NPC_Data.dialoguePhase.QuestTaken;
+        }
+        else if (phase == "QuestCompleted")
+        {
+            ayanokojiData.currentPhase = NPC_Data.dialoguePhase.QuestCompleted;
+        }
+        else if (phase == "QuestFumbled")
+        {
+            ayanokojiData.currentPhase = NPC_Data.dialoguePhase.QuestFumbled;
+        }
+
+        Debug.Log($"[GameController] Ayanokoji phase is now: {ayanokojiData.currentPhase}");
     }
 }

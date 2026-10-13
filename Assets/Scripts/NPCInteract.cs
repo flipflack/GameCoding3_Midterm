@@ -44,13 +44,20 @@ public class NPCInteract : MonoBehaviour
             if (Keyboard.current.fKey.wasPressedThisFrame)
             {
                 setText("");
-                dialogue.StartDialogue(npc_Data.startingNode);
-                lockCursor.CursorUnlock();
                 canInteract = false;
+                setPlayerMovement(true);
+
+                if (dialogue != null && dialogue.VariableStorage != null)
+                {
+                    dialogue.VariableStorage.SetValue("$ayanokoji_DialoguePhase", npc_Data.currentPhase.ToString());
+                    dialogue.VariableStorage.SetValue("$suspiciousGuy_DialoguePhase", npc_Data.currentPhase.ToString());
+                }
+
+                dialogue.StartDialogue(npc_Data.startingNode);
+                if (lockCursor != null) lockCursor.CursorUnlock();
             }
         }
     }
-
     [YarnCommand("dialoguePhaseSetter")]
     public void setYarnPhase()
     {
@@ -79,5 +86,36 @@ public class NPCInteract : MonoBehaviour
     public void OnApplicationQuit()
     {
         npc_Data.resetData();
+    }
+    public void setPlayerMovement(bool b)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerMovement pm = player.GetComponent<PlayerMovement>();
+            if (pm != null) pm.enabled = !b;
+        }
+    }
+
+    public void moveForDialog(Transform movePos)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null && movePos != null)
+        {
+            player.transform.position = movePos.position;
+        }
+    }
+    public void UnlockPlayer()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerMovement pm = player.GetComponent<PlayerMovement>();
+            if (pm != null) pm.enabled = true;
+        }
+        if (lockCursor != null)
+        {
+            lockCursor.CursorLock();
+        }
     }
 }

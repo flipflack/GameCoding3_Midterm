@@ -6,7 +6,7 @@ using Yarn.Unity;
 
 public class AuraFarmMeter : MonoBehaviour
 {   
-    private static AuraFarmMeter instance;
+    public static AuraFarmMeter instance { get; private set; }
 
     [Header("UI References")]
     [SerializeField] private Slider auraMeter;
@@ -15,7 +15,7 @@ public class AuraFarmMeter : MonoBehaviour
     [SerializeField] private float maxAura;
     [SerializeField] private float fillSpeed;
 
-    private float currentAura = 0f;
+    public float currentAura = 0f;
     private Coroutine fillCoroutine;
 
     private void Awake()
