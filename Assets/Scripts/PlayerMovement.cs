@@ -79,24 +79,5 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
         }
     }
-    public void setPlayerMovement(bool b)
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        PlayerMovement pm = player.GetComponent<PlayerMovement>();
 
-        if (b)
-        {
-            pm.enabled = false;
-        }
-        else
-        {
-            pm.enabled = true;
-        }
-    }
-
-    public void moveForDialog(Transform movePos)
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = movePos.position;
-    }
 }
