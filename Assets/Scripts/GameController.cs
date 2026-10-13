@@ -17,6 +17,10 @@ public class GameController : MonoBehaviour
     [Header("Scene Load Check")]
     public bool firstSceneLoaded = false;
 
+    [Header("Checks")]
+    public static bool ranFadeSequence = false;
+    public static bool ranTitleSequence = false;
+
     public void Awake()
     {
         if (instance != null && instance != this)
