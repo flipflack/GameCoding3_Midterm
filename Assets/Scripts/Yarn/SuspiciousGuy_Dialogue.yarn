@@ -1,6 +1,7 @@
 ﻿title: SuspiciousGuy_Dialogue
 ---
 <<declare $suspiciousGuy_DialoguePhase = "">>
+<<declare $aura = 0>>
 <<dialoguePhaseSetter SuspiciousGuy_NPC>>
 
 //Declare Variables Here
@@ -27,9 +28,13 @@ You: Hey, is something going on?
 Suspicious Guy: Nothing much, just checking up on you
 Suspicious Guy: Anyways, I heard you got yelled at today by Ms. Smith haha
     ->You:  *smirks* And why is any of that your concern?
+        <<set $aura += 20>>
+        <<add_aura GameController 20>>
         Suspicious Guy: To be fair, if I were you i’d be embarrassed
         <<jump SuspiciousGuy_QuestPhaseOne>>
     ->You:  Why do you care?
+        <<set $aura += 10>>
+        <<add_aura GameController 10>>
         Suspicious Guy: Nothing much, I mean I'm concerned about you thats all
         <<jump SuspiciousGuy_QuestPhaseOne>>
     ->You: Uh.. And what?
@@ -37,15 +42,21 @@ Suspicious Guy: Anyways, I heard you got yelled at today by Ms. Smith haha
             -> You: And you’re certain you’re just trying to check up on me?
                 <<jump SuspiciousGuy_QuestPhaseOne>> 
             -> You: If you’re just trying to provoke me right now, you’re wasting your time
+                <<set $aura += 20>>
+                <<add_aura GameController 20>>
                 <<jump SuspiciousGuy_QuestPhaseOne>>
 ===
 
 title: SuspiciousGuy_QuestPhaseOne
 ---
-You: Then care to explain that one time when I saw you shoplifting? 
-<<jump SuspiciousGuy_QuestShopliftingPathway>>
-You: Then what about other day when I saw you taking pictures of Ms. Smith without her 
-<<jump SuspiciousGuy_QuestSneakyPicturePathway>>
+->You: Then care to explain that one time when I saw you shoplifting? 
+    <<set $aura += 20>>
+    <<add_aura GameController 20>>
+    <<jump SuspiciousGuy_QuestShopliftingPathway>>
+->You: Then what about other day when I saw you taking pictures of Ms. Smith without her knowing
+    <<set $aura += 20>>
+    <<add_aura GameController 20>>
+    <<jump SuspiciousGuy_QuestSneakyPicturePathway>>
 ===
 
 title: SuspiciousGuy_QuestShopliftingPathway
@@ -53,21 +64,22 @@ title: SuspiciousGuy_QuestShopliftingPathway
 Suspicious Guy: HAHAHA, What a joke, you think you’re so tough huh?    
 Suspicious Guy: Now then, what did you even see me shoplift if you’re so confident in that statement   
     ->Shampoo
+        <<set $aura += 60>>
+        <<add_aura GameController 60>>
         Suspicious Guy: (intimidated) Y-y-y-y-y-you actually saw?    
         You: What? Haha, you’d think I wouldn’t know?
         You: You went to the personal care aisle, and looked suspicious. A quick observation, and I knew you had no points at all and as I expected, you stuffed it right in your bag. 
-        <<jump SuspiciousGuy_QuestWin>>
+        <<jump SuspiciousGuy_CheckResolution>>
     ->Pencil
         Suspicious Guy: Oh nah you’re just larping, you’d think I'd ever steal anything as puny like that?
 	    You : Oh.. well
-        <<jump SuspiciousGuy_QuestFumbled>>
+        <<jump SuspiciousGuy_CheckResolution>>
     ->Nintendo 3Ds
         Suspicious Guy: Oh nah, I already have that, why the hell would I shoplift that, nobody in their right mind would do so
         Suspicious Guy: You’re just making things up
 	    You: I see..
-        <<jump SuspiciousGuy_QuestFumbled>>
+        <<jump SuspiciousGuy_CheckResolution>>
 ===
-
 title: SuspiciousGuy_QuestSneakyPicturePathway
 ---
 Suspicious Guy: W-what?
@@ -75,32 +87,44 @@ You: Oh? You didn’t hear me the first time? You were taking pictures of Ms. Sm
 Suspicious Guy: H-hold on, you can’t accuse me of something like that.
     ->You: Well, I'm not accusing you, I'm just simply conveying what I saw 
         Suspicious Guy: well its not like you have proof anyways
-        You: I’m not interested in arguing, I just told you what I say.
+        You: I’m not interested in arguing, I just told you what I saw.
         Suspicious Guy: you can’t prove anything, stop wasting my time 
-        <<jump SuspiciousGuy_QuestFumbled>>
+        <<jump SuspiciousGuy_CheckResolution>>
     ->You: Hah.. why’re you getting so defensive?
+        <<set $aura += 60>>
+        <<add_aura GameController 60>>
         Suspicious Guy: Well, it's not like you have proof anyways haha
         You: *looks up at security cameras*
         You: You should at least be thankful that I didn’t tell anyone..
         Suspicious Guy: … 
-        <<jump SuspiciousGuy_QuestWin>>
+        <<jump SuspiciousGuy_CheckResolution>>
+===
 
+title: SuspiciousGuy_CheckResolution
+---
+<<if $aura >= 50>>
+    <<jump SuspiciousGuy_QuestWin>>
+<<else>>
+    <<jump SuspiciousGuy_QuestFumbled>>
+<<endif>>
 ===
 
 title: SuspiciousGuy_QuestWin
 ---
+<<set $ayanokoji_DialoguePhase = "QuestCompleted">>
+<<dialoguePhaseGetter Ayanokoji "QuestCompleted">>
 Suspicious Guy: Sigh.. Fine you win.. Forget anything that I said earlier
 You: Sure
 Suspicious Guy: Ugh, you’re seriously annoying, you know that? 
 You: That doesn’t concern me. 
 *Looks out into the far distance, devoid of all emotion. Coolness is your first name, calm your second, and unmoving your third.*
-
 ===
 title: SuspiciousGuy_QuestFumbled
+position: 695,-58
 ---
+<<set $ayanokoji_DialoguePhase = "QuestCompleted">>
+<<dialoguePhaseGetter Ayanokoji "QuestCompleted">>
 Suspicious Guy: You think you’re so tough huh, trying to be the cool kid when in reality you’re actually a fricken loser.
 Suspicious Guy: *spits on player* Don’t talk to me again 
-
 *Go back and tell Ayanokoji the result of your pursuit in Aurafarming* 
-
 ===

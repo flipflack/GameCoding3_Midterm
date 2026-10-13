@@ -2110,8 +2110,6 @@ MonoBehaviour:
   fadeInDuration: 1
   holdDuration: 1
   fadeOutDuration: 1
-  ranFadeSequence: 0
-  ranTitleSequence: 0
 --- !u!1 &1953395202
 GameObject:
   m_ObjectHideFlags: 0
